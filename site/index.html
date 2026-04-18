@@ -64,7 +64,18 @@
         </div>
       </div>
       <div class="hero-visual reveal">
-        <div class="hero-photo ph-hero" role="img" aria-label="信州の風景(写真差し替え予定)"></div>
+        <div class="hero-photo">
+          <picture>
+            <source media="(max-width: 640px)"
+                    srcset="assets/images/takai-benri-hero-mobile.jpg"
+                    type="image/jpeg">
+            <img src="assets/images/takai-benri-hero.jpg"
+                 alt="信州の里山風景"
+                 width="1400" height="1050"
+                 loading="eager"
+                 decoding="async">
+          </picture>
+        </div>
         <div class="hero-stamp">
           <div class="hero-stamp-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>

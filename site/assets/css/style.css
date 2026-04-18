@@ -369,10 +369,18 @@ p  { margin: 0; }
   box-shadow: var(--shadow-lg);
   background: var(--brand-soft);
 }
+.hero-photo picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .hero-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 58% center;
+  border-radius: var(--radius-xl);
 }
 .hero-stamp {
   position: absolute;
