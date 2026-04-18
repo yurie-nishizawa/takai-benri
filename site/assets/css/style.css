@@ -1317,9 +1317,13 @@ p  { margin: 0; }
     font-size: 1.45rem;
   }
   .section-title h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
   .section-title p {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
+    text-align: left;
+    max-width: 100%;
   }
 }
