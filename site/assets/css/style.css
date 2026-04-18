@@ -839,8 +839,14 @@ p  { margin: 0; }
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  overflow: hidden;
+  overflow: visible;
   transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.work-card-summary {
+  cursor: pointer;
+  user-select: none;
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 .work-card:hover {
   transform: translateY(-3px);
@@ -1331,11 +1337,6 @@ p  { margin: 0; }
 /* ==========================================================================
    Works — アコーディオン展開
    ========================================================================== */
-
-.work-card-summary {
-  cursor: pointer;
-  user-select: none;
-}
 
 .work-expand-hint {
   display: flex;
