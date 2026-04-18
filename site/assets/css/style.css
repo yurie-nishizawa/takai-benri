@@ -1014,11 +1014,23 @@ p  { margin: 0; }
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   padding: 36px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.form-grid .field input,
+.form-grid .field select,
+.form-grid .field textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .field { display: grid; gap: 8px; }
 .field.full { grid-column: 1 / -1; }
@@ -1295,4 +1307,10 @@ p  { margin: 0; }
   .form-card { padding: 24px 20px; }
   .sticky-bar { display: flex; }
   .page-bottom-pad { padding-bottom: 96px; }
+}
+
+@media (max-width: 640px) {
+  .hero-photo img {
+    object-position: 62% center;
+  }
 }
