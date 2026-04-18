@@ -1,0 +1,183 @@
+/* ==========================================================================
+   信州おたすけ便利屋 助さん  —  プレースホルダー画像
+   実写差し替え前の、信州の風景・作業シーンを抽象的に表現した画像群。
+   すべてグラデーション + SVG レイヤーで構成。
+   ※ 位置決め (position, inset) は style.css 側に任せ、
+      このファイルは背景・装飾のみ扱う。
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   HERO: 信州の山並み (Layered Mountains)
+   空 → 遠景 → 中景 → 近景 の4層で、日本画のような余白と間を表現。
+   -------------------------------------------------------------------------- */
+.ph-hero {
+  /* position は style.css の .hero-photo で absolute 指定済み */
+  background-color: transparent;
+  background-image:
+    /* 手前 (深緑) */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' preserveAspectRatio='none'><path d='M0 520 L0 430 L80 390 L160 420 L230 380 L310 405 L390 360 L470 400 L550 370 L640 405 L720 380 L800 420 L800 600 L0 600 Z' fill='%231f5232'/></svg>"),
+    /* 中景 (ミディアム緑) */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' preserveAspectRatio='none'><path d='M0 440 L60 380 L130 330 L200 360 L280 300 L360 340 L440 290 L520 320 L610 280 L690 310 L760 280 L800 310 L800 600 L0 600 Z' fill='%234a8063'/></svg>"),
+    /* 遠景 (薄い青緑) */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' preserveAspectRatio='none'><path d='M0 380 L50 330 L110 290 L180 310 L260 250 L340 280 L430 240 L520 260 L610 230 L700 250 L780 240 L800 260 L800 600 L0 600 Z' fill='%23829e94' opacity='0.82'/></svg>"),
+    /* 最奥 (グレー青) */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' preserveAspectRatio='none'><path d='M0 330 L70 290 L160 250 L240 275 L330 230 L420 255 L520 220 L620 245 L720 225 L800 245 L800 600 L0 600 Z' fill='%23a5b5af' opacity='0.6'/></svg>"),
+    /* 太陽 (右上) */
+    radial-gradient(circle at 82% 22%, rgba(255, 248, 224, 0.9) 0%, rgba(255, 238, 200, 0.35) 40%, transparent 62%),
+    /* 空 グラデーション */
+    linear-gradient(180deg, #eef2ea 0%, #e8ecdf 28%, #e5d7b6 58%, #d8c29a 78%, #c0b089 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center bottom;
+}
+
+/* 元の ::after の content:"信州の風景" を上書きして無効化 */
+.ph-hero::after {
+  content: none;
+}
+
+/* 差し替え案内ラベル (HTML 側の <span class="ph-label">) */
+.ph-label {
+  position: absolute;
+  left: 18px;
+  top: 16px;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  background: rgba(22, 32, 28, 0.32);
+  padding: 4px 12px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   WORKS: カテゴリ別プレースホルダー
+   グラデーション背景 + 大判のラインアイコン + "PHOTO" バッジ
+   -------------------------------------------------------------------------- */
+.ph-work-1, .ph-work-2, .ph-work-3,
+.ph-work-4, .ph-work-5, .ph-work-6,
+.ph-portrait {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* 各カテゴリのベース背景 (信州の自然から拝借した落ち着いた配色) */
+.ph-work-1 {
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.25), transparent 55%),
+    linear-gradient(135deg, #8fa878 0%, #b5c79b 100%);
+}
+.ph-work-2 {
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.22), transparent 55%),
+    linear-gradient(135deg, #3f7053 0%, #6a9176 100%);
+}
+.ph-work-3 {
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.28), transparent 55%),
+    linear-gradient(135deg, #7a98a8 0%, #a8bfc7 100%);
+}
+.ph-work-4 {
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.35), transparent 55%),
+    linear-gradient(135deg, #8599a5 0%, #b8c8cf 100%);
+}
+.ph-work-5 {
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.2), transparent 55%),
+    linear-gradient(135deg, #a58560 0%, #c9a981 100%);
+}
+.ph-work-6 {
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.22), transparent 55%),
+    linear-gradient(135deg, #5d7a55 0%, #8ba676 100%);
+}
+.ph-portrait {
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(255,255,255,0.3), transparent 60%),
+    linear-gradient(160deg, #b8a284 0%, #d9c3a3 100%);
+}
+
+/* 大判ピクトグラム (共通設定) */
+.ph-work-1::before, .ph-work-2::before, .ph-work-3::before,
+.ph-work-4::before, .ph-work-5::before, .ph-work-6::before,
+.ph-portrait::before {
+  content: "";
+  width: 38%;
+  aspect-ratio: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 8px rgba(22, 32, 28, 0.32));
+  z-index: 1;
+}
+
+/* 片付け — 整理された箱 */
+.ph-work-1::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='10' y='22' width='44' height='32' rx='2'/><path d='M10 32 L54 32'/><path d='M22 22 L22 16 L42 16 L42 22'/><path d='M24 42 L40 42'/><path d='M28 44 L28 40'/><path d='M36 44 L36 40'/></svg>");
+}
+
+/* 外回り(庭木) — 木 */
+.ph-work-2::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M32 10 C22 14 20 24 26 28 C18 30 18 42 28 42 L36 42 C46 42 46 30 38 28 C44 24 42 14 32 10 Z'/><path d='M32 42 L32 56'/><path d='M26 56 L38 56'/></svg>");
+}
+
+/* スマホ・IT — スマホ画面 */
+.ph-work-3::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='18' y='10' width='28' height='44' rx='4'/><path d='M18 18 L46 18'/><path d='M18 46 L46 46'/><circle cx='32' cy='50' r='1.5' fill='white'/><path d='M25 26 L39 26'/><path d='M25 32 L35 32'/><path d='M25 38 L39 38'/></svg>");
+}
+
+/* 外回り(雪) — 雪の結晶 */
+.ph-work-4::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M32 8 L32 56'/><path d='M11 20 L53 44'/><path d='M11 44 L53 20'/><path d='M28 12 L32 16 L36 12'/><path d='M28 52 L32 48 L36 52'/><path d='M14 16 L16 20 L12 22'/><path d='M52 48 L50 44 L54 42'/><path d='M14 48 L16 44 L12 42'/><path d='M52 16 L50 20 L54 22'/></svg>");
+}
+
+/* 買い物・同行 — バッグ */
+.ph-work-5::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M14 22 L50 22 L46 56 L18 56 Z'/><path d='M24 22 C24 16 27 12 32 12 C37 12 40 16 40 22'/><path d='M24 32 L24 36'/><path d='M40 32 L40 36'/></svg>");
+}
+
+/* 引越し — 段ボール箱 (積み重ね) */
+.ph-work-6::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='12' y='32' width='40' height='24' rx='1'/><path d='M12 40 L52 40'/><path d='M28 32 L28 40'/><path d='M36 32 L36 40'/><rect x='20' y='12' width='24' height='20' rx='1'/><path d='M20 18 L44 18'/><path d='M30 12 L30 18'/><path d='M34 12 L34 18'/></svg>");
+}
+
+/* ポートレート — 人物シルエット */
+.ph-portrait::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><circle cx='32' cy='22' r='10'/><path d='M14 58 C14 46 22 38 32 38 C42 38 50 46 50 58'/></svg>");
+}
+
+/* "PHOTO" バッジ */
+.ph-work-1::after, .ph-work-2::after, .ph-work-3::after,
+.ph-work-4::after, .ph-work-5::after, .ph-work-6::after,
+.ph-portrait::after {
+  content: "PHOTO";
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  top: auto;
+  right: auto;
+  color: #fff;
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  font-weight: 700;
+  padding: 3px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  z-index: 2;
+  background: rgba(22, 32, 28, 0.22);
+  backdrop-filter: blur(2px);
+}
+
+/* ポートレート用の PHOTO バッジ位置 */
+.ph-portrait::after {
+  left: 14px;
+  bottom: 14px;
+}

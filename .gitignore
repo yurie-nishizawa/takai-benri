@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# 内部作業ファイル（公開しない）
+CLAUDE.md
+DESIGN.md
+SECURITY.md
+wireframes.html
+reference/
+docs/
+recipes/
+validators/
+schema/
+.claude/
+
+# 一時ファイル・不要ファイル
+site/pasted-*.txt
+site/assets/images/placeholders.css
