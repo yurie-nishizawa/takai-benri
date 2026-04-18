@@ -1316,4 +1316,10 @@ p  { margin: 0; }
   .hero h1 {
     font-size: 1.45rem;
   }
+  .section-title h2 {
+    font-size: 1.3rem;
+  }
+  .section-title p {
+    font-size: 0.92rem;
+  }
 }
