@@ -1313,4 +1313,7 @@ p  { margin: 0; }
   .hero-photo img {
     object-position: 62% center;
   }
+  .hero h1 {
+    font-size: 1.45rem;
+  }
 }
